@@ -20,10 +20,14 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
+import com.example.project.lang.updateAppLocale
 import com.example.project.settings.SettingsScreen
 import com.example.project.settings.SettingsViewModel
 import com.example.project.settings.SettingsViewModelFactory
 import com.example.project.settings.UserPreferencesRepository
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 
 
 class MainActivity : ComponentActivity() {
@@ -36,9 +40,14 @@ class MainActivity : ComponentActivity() {
         val viewModelFactory = SettingsViewModelFactory(repo)
         val viewModel = ViewModelProvider(this, viewModelFactory)[SettingsViewModel::class.java]
 
+        lifecycleScope.launch {
+            val language = viewModel.currentLanguage.first()
+            val langCode = if (language == "Arabic") "ar" else "en"
+            updateAppLocale(langCode)
+        }
+
         setContent {
             val theme by viewModel.currentTheme.collectAsState()
-            val language by viewModel.currentLanguage.collectAsState()
             val isThemeDark = when (theme){
                 "Light" -> false
                 "Dark" -> true

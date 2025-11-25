@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">Project</string>
+    <string name="app_name">Movie Discovery</string>
+    <string name="login_title">Login</string>
+    <string name="signup">Sign Up</string>
+    <string name="email_label">Email</string>
+    <string name="password_label">Password</string>
+    <string name="login_button">Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="signup_prompt">Don\'t have an account? Sign Up</string>
+    <string name="login_prompt">Already have an account? Login</string>
+    <string name="welcome_home">Welcome to the Home Screen</string>
+    <string name="logout_button">Logout</string>
+    <string name="settings_title">Settings</string>
+    <string name="app_theme_label">App Theme</string>
+    <string name="app_language_label">App Language</string>
+    <string name="home_label">Welcome to the Home Screen</string>
 </resources>

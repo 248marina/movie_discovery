@@ -18,6 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.project.auth.AuthViewModel
@@ -39,7 +40,7 @@ fun HomeScreen(navController: NavHostController, viewModel: AuthViewModel) {
                 Icon(imageVector = Icons.Default.Settings, contentDescription = "Settings")
             }
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text("Welcome to the Home Screen", style = MaterialTheme.typography.headlineMedium)
+                Text(stringResource(R.string.home_label), style = MaterialTheme.typography.headlineMedium)
                 Spacer(modifier = Modifier.height(24.dp))
                 Button(onClick = { viewModel.logout() }) { Text("Logout") }
             }

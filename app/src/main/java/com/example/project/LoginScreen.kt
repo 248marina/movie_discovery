@@ -26,6 +26,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -62,19 +63,19 @@ fun LoginScreen(
     ){
         Box(modifier = Modifier.fillMaxSize().padding(16.dp), contentAlignment = Alignment.Center){
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text("Login", style = MaterialTheme.typography.headlineMedium)
+                Text(text = stringResource(R.string.login_title), style = MaterialTheme.typography.headlineMedium)
                 Spacer(modifier = Modifier.height(24.dp))
                 OutlinedTextField(
                     value = uiState.value.email,
                     onValueChange = viewModel::onEmailChange,
-                    label = { Text("Email") },
+                    label = { Text(stringResource(R.string.email_label)) },
                     singleLine = true,
                     modifier = Modifier.fillMaxWidth())
                 Spacer(modifier = Modifier.height(16.dp))
                 OutlinedTextField(
                     value = uiState.value.password,
                     onValueChange = viewModel::onPasswordChange,
-                    label = { Text("Password") },
+                    label = { Text(stringResource(R.string.password_label)) },
                     singleLine = true,
                     visualTransformation = PasswordVisualTransformation(),
                     modifier = Modifier.fillMaxWidth())
@@ -87,7 +88,7 @@ fun LoginScreen(
                             color = MaterialTheme.colorScheme.onPrimary
                         )
                     } else {
-                        Text("Login")
+                        Text(stringResource(R.string.login_button))
                     }
                 }
                 Spacer(modifier = Modifier.height(8.dp))
@@ -95,11 +96,11 @@ fun LoginScreen(
                     navController.navigate("signup"){
                         popUpTo("login"){ inclusive = true }
                     }}) {
-                    Text("Don't have an account? Sign Up")
+                    Text(stringResource(R.string.signup_prompt))
                 }
                 Spacer(modifier = Modifier.height(8.dp))
                 TextButton(onClick = { viewModel.resetPassword() }) {
-                    Text("Forgot Password? Reset Password")
+                    Text(stringResource(R.string.forgot_password))
                 }
             }
         }
