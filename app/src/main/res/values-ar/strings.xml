@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Movie Discovery</string>
+    <string name="login_title">تسجيل الدخول</string>
+    <string name="signup">التسجيل</string>
+    <string name="email_label">البريد الإلكتروني</string>
+    <string name="password_label">كلمة المرور</string>
+    <string name="login_button">تسجيل الدخول</string>
+    <string name="forgot_password">هل نسيت كلمة المرور؟</string>
+    <string name="signup_prompt">ليس لديك حساب؟ قم بإنشاء حساب</string>
+    <string name="login_prompt">لديك حساب بالفعل؟ قم بتسجيل الدخول</string>
+    <string name="welcome_home">أهلاً بك في الشاشة الرئيسية</string>
+    <string name="logout_button">تسجيل الخروج</string>
+    <string name="settings_title">الإعدادات</string>
+    <string name="app_theme_label">واجهة التطبيق</string>
+    <string name="app_language_label">لغة التطبيق</string>
+    <string-array name="theme_options">النظام , فاتح , داكن</string-array>
+    <string-array name="language_options">النظام, انجليزي , عربي</string-array>
+
+</resources>

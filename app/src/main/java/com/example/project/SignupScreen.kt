@@ -26,6 +26,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
@@ -66,19 +67,19 @@ fun SignupScreen(
     ) {
         Box(modifier = Modifier.fillMaxSize().padding(16.dp), contentAlignment = Alignment.Center){
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text("Sign Up", style = MaterialTheme.typography.headlineMedium)
+                Text(stringResource(R.string.signup), style = MaterialTheme.typography.headlineMedium)
                 Spacer(modifier = Modifier.height(24.dp))
                 OutlinedTextField(
                     value = uiState.value.email,
                     onValueChange = viewModel::onEmailChange,
-                    label = { Text("Email") },
+                    label = { Text(stringResource(R.string.email_label)) },
                     singleLine = true,
                     modifier = Modifier.fillMaxWidth())
                 Spacer(modifier = Modifier.height(16.dp))
                 OutlinedTextField(
                     value = uiState.value.password,
                     onValueChange = viewModel::onPasswordChange,
-                    label = { Text("Password") },
+                    label = { Text(stringResource(R.string.password_label)) },
                     singleLine = true,
                     visualTransformation = PasswordVisualTransformation(),
                     modifier = Modifier.fillMaxWidth())
@@ -91,7 +92,7 @@ fun SignupScreen(
                             color = MaterialTheme.colorScheme.onPrimary
                         )
                     } else {
-                        Text("Sign Up")
+                        Text(stringResource(R.string.signup))
                     }
                 }
                 Spacer(modifier = Modifier.height(8.dp))
@@ -99,7 +100,7 @@ fun SignupScreen(
                     navController.navigate("login"){
                         popUpTo("signup"){ inclusive = true }
                     }}) {
-                    Text("Already have an account? Login")
+                    Text(stringResource(R.string.login_prompt))
                 }
             }
         }

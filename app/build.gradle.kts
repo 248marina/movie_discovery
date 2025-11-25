@@ -74,4 +74,13 @@ dependencies {
 
     // Coil for Jetpack Compose
     implementation("io.coil-kt:coil-compose:2.7.0")
+
+    // Coroutine support
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+
+    //Serialization
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+
+    // DataStore
+    implementation ("androidx.datastore:datastore-preferences:1.0.0")
 }

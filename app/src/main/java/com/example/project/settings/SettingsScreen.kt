@@ -18,9 +18,12 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringArrayResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.example.project.R
 
 @Composable
 fun SettingsScreen(viewModel: SettingsViewModel) {
@@ -32,24 +35,23 @@ fun SettingsScreen(viewModel: SettingsViewModel) {
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        Text("Settings", style = MaterialTheme.typography.headlineMedium)
+        Text(stringResource(R.string.settings_title), style = MaterialTheme.typography.headlineMedium)
         Spacer(modifier = Modifier.height(24.dp))
 
-        Text("App Theme", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+        Text(stringResource(R.string.app_theme_label), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
         RadioOptionsGroup(
-            options = listOf("System", "Light", "Dark"),
+            options = stringArrayResource(R.array.theme_options).toList(),
             selectedOption = currentTheme,
             onOptionSelected = { viewModel.updateTheme(it) }
         )
         Spacer(modifier = Modifier.height(24.dp))
 
-        Text("App Language", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+        Text(stringResource(R.string.app_language_label), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
         RadioOptionsGroup(
-            options = listOf("System", "English", "Arabic"),
+            options = stringArrayResource(R.array.language_options).toList(),
             selectedOption = currentLanguage,
             onOptionSelected = { viewModel.updateLanguage(it) }
         )
-
     }
 }
 
