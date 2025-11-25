@@ -13,7 +13,6 @@
     <string name="logout_button">تسجيل الخروج</string>
     <string name="settings_title">الإعدادات</string>
     <string name="app_theme_label">واجهة التطبيق</string>
-    <string name="app_language_label">لغة التطبيق</string>
     <string name="home_label">أهلاً بك في الصفحة الرئيسية</string>
 
 </resources>

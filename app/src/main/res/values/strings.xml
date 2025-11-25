@@ -12,6 +12,5 @@
     <string name="logout_button">Logout</string>
     <string name="settings_title">Settings</string>
     <string name="app_theme_label">App Theme</string>
-    <string name="app_language_label">App Language</string>
     <string name="home_label">Welcome to the Home Screen</string>
 </resources>

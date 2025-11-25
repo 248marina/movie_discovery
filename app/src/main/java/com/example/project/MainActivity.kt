@@ -19,6 +19,8 @@ import com.google.firebase.FirebaseApp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.res.stringArrayResource
+import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.example.project.lang.updateAppLocale
@@ -40,17 +42,13 @@ class MainActivity : ComponentActivity() {
         val viewModelFactory = SettingsViewModelFactory(repo)
         val viewModel = ViewModelProvider(this, viewModelFactory)[SettingsViewModel::class.java]
 
-        lifecycleScope.launch {
-            val language = viewModel.currentLanguage.first()
-            val langCode = if (language == "Arabic") "ar" else "en"
-            updateAppLocale(langCode)
-        }
-
         setContent {
             val theme by viewModel.currentTheme.collectAsState()
             val isThemeDark = when (theme){
                 "Light" -> false
+                "فاتح" -> false
                 "Dark" -> true
+                "داكن" -> true
                 else -> isSystemInDarkTheme()
             }
             ProjectTheme(dynamicColor = false, darkTheme = isThemeDark) {

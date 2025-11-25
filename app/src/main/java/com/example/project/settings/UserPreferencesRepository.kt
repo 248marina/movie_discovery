@@ -14,26 +14,14 @@ val Context.dataStore by preferencesDataStore(name = "settings_prefs")
 class UserPreferencesRepository(app: Application) : AndroidViewModel(app) {
     private val dataStore = app.dataStore
     private val appThemeKey = stringPreferencesKey("app_theme")
-    private val appLanguageKey = stringPreferencesKey("app_language")
 
     val themeFlow: Flow<String> = dataStore.data
         .map { preferences ->
             preferences[appThemeKey] ?: "System"
         }
-    val languageFlow: Flow<String> = dataStore.data
-        .map { preferences ->
-            preferences[appLanguageKey] ?: "System"
-        }
-
     suspend fun saveTheme(themeValue: String) {
         dataStore.edit { preferences ->
             preferences[appThemeKey] = themeValue
-        }
-    }
-
-    suspend fun saveLanguage(languageValue: String) {
-        dataStore.edit { preferences ->
-            preferences[appLanguageKey] = languageValue
         }
     }
 }

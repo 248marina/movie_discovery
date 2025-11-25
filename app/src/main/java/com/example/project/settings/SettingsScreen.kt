@@ -28,7 +28,6 @@ import com.example.project.R
 @Composable
 fun SettingsScreen(viewModel: SettingsViewModel) {
     val currentTheme by viewModel.currentTheme.collectAsState()
-    val currentLanguage by viewModel.currentLanguage.collectAsState()
 
     Column(
         modifier = Modifier
@@ -43,14 +42,6 @@ fun SettingsScreen(viewModel: SettingsViewModel) {
             options = stringArrayResource(R.array.theme_options).toList(),
             selectedOption = currentTheme,
             onOptionSelected = { viewModel.updateTheme(it) }
-        )
-        Spacer(modifier = Modifier.height(24.dp))
-
-        Text(stringResource(R.string.app_language_label), style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
-        RadioOptionsGroup(
-            options = stringArrayResource(R.array.language_options).toList(),
-            selectedOption = currentLanguage,
-            onOptionSelected = { viewModel.updateLanguage(it) }
         )
     }
 }

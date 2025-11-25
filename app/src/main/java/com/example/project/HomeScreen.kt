@@ -42,7 +42,7 @@ fun HomeScreen(navController: NavHostController, viewModel: AuthViewModel) {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Text(stringResource(R.string.home_label), style = MaterialTheme.typography.headlineMedium)
                 Spacer(modifier = Modifier.height(24.dp))
-                Button(onClick = { viewModel.logout() }) { Text("Logout") }
+                Button(onClick = { viewModel.logout() }) { Text(stringResource(R.string.logout_button)) }
             }
         }
     }

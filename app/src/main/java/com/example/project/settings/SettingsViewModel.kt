@@ -15,21 +15,10 @@ class SettingsViewModel(private val repository: UserPreferencesRepository) : Vie
             started = SharingStarted.WhileSubscribed(5000),
             initialValue = "System"
         )
-    val currentLanguage: StateFlow<String> = repository.languageFlow
-        .stateIn(
-            scope = viewModelScope,
-            started = SharingStarted.WhileSubscribed(5000),
-            initialValue = "System"
-        )
 
     fun updateTheme(newTheme: String) {
         viewModelScope.launch {
             repository.saveTheme(newTheme)
-        }
-    }
-    fun updateLanguage(newLanguage: String) {
-        viewModelScope.launch {
-            repository.saveLanguage(newLanguage)
         }
     }
 }
