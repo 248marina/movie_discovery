@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Movies</string>
+    <string name="login_title">Login</string>
+    <string name="signup">Sign Up</string>
+    <string name="email_label">Email</string>
+    <string name="password_label">Password</string>
+    <string name="login_button">Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="signup_prompt">Don\'t have an account? Sign Up</string>
+    <string name="login_prompt">Already have an account? Login</string>
+    <string name="welcome_home">Welcome to the Home Screen</string>
+    <string name="logout_button">Logout</string>
+    <string name="settings_title">Settings</string>
+    <string name="app_theme_label">App Theme</string>
+    <string name="contact_label">For contact with us, please send an email to: marinaachraf2@gmail.com</string>
+</resources>
