@@ -97,12 +97,12 @@ class MainActivity : ComponentActivity() {
                 val authUiState by authViewModel.uiState.collectAsState()
                 val isLoggedIn = authUiState. isLoggedIn
 
-                    Scaffold(
-                        bottomBar = {
-                            if (isLoggedIn && (currentRoute != "signup" && currentRoute != "login")) {
-                                NavigationBar(containerColor = if (isThemeDark) Color.Black else Color(
-                                    0xFFFF9800
-                                )
+                   Scaffold(
+                       bottomBar = {
+                                 if (isLoggedIn && (currentRoute != "signup" && currentRoute != "login")) {
+                                     NavigationBar(
+                                             containerColor = if (isThemeDark) Color.Black else Color(0xFFD0E6FD)  
+                         )
                                 ) {
                                     NavigationBarItem(
                                         icon = { Icon(Icons.Filled.Home, contentDescription = "Home") },
@@ -266,14 +266,14 @@ class MainActivity : ComponentActivity() {
                                 composable("detail") {
                                     val selectedMovie by viewModel.selectedMovie.collectAsState()
                                     selectedMovie?.let { movie ->
-                                        DetailScreen(
-                                            movie = movie,
-                                            viewModel = viewModel,
-                                            color = if(isThemeDark) Color.Black else Color(0xFFBB8223),
-                                            onActorClick = { actorId ->
-                                                navController.navigate("actor_details/$actorId")
-                                            }
-                                        )
+                                       DetailScreen(
+                                          movie = movie,
+                                          viewModel = viewModel,
+                                          color = if(isThemeDark) Color.Black else Color(0xFF162660),  
+                                          onActorClick = { actorId ->
+                                             navController.navigate("actor_details/$actorId")
+                                    }
+                                )
                                     }
                                 }
                                 composable(
