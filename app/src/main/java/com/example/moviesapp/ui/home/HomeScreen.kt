@@ -124,11 +124,11 @@ fun HomeScreen(movies: List<Movie>, onMovieClick: (Movie) -> Unit, navController
                             verticalAlignment = Alignment.CenterVertically,
                             horizontalArrangement = Arrangement.spacedBy(12.dp)
                         ) {
-                            Text(
-                                text = "⭐ ${movie.voteAverage}/10",
-                                color = Color(0xFFFFD700),
-                                style = MaterialTheme.typography.bodyMedium
-                            )
+                           Text(
+                            text = "⭐ ${movie.voteAverage}/10",
+                            color = Color(0xFF162660),  
+                           style = MaterialTheme.typography.bodyMedium
+                         )
 
                             Text(
                                 text = movie.releaseDate?.take(4) ?: "",
