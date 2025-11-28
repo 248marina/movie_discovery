@@ -1,11 +1,11 @@
 package com.example.moviesapp.ui.theme
 
 import androidx.compose.ui.graphics.Color
-val YellowHeader = Color(0xFFFFC107)
+val YellowHeader = Color(0xFFD0E6FD)
 val CardDarkGray = Color(0xFF1E1E1E)
 val RedButton = Color(0xFFB71C1C)
 val MainBlack = Color.Black
-val YellowAccent = Color(0xFFFFB300)
+val YellowAccent = Color(0xFFF1E4D1)
 
 val WhiteText = Color(0xFFFFFFFF)
 val GrayText = Color.Gray
