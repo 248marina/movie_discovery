@@ -54,7 +54,6 @@ fun FavoriteScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(DarkBackground)
     ) {
         //  Custom Header with curved bottom
         Box(

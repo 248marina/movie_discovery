@@ -101,8 +101,7 @@ class MainActivity : ComponentActivity() {
                        bottomBar = {
                                  if (isLoggedIn && (currentRoute != "signup" && currentRoute != "login")) {
                                      NavigationBar(
-                                             containerColor = if (isThemeDark) Color.Black else Color(0xFFD0E6FD)  
-                         )
+                                             containerColor = if (isThemeDark) Color.Black else Color(0xFFD0E6FD)
                                 ) {
                                     NavigationBarItem(
                                         icon = { Icon(Icons.Filled.Home, contentDescription = "Home") },
