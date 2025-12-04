@@ -1,6 +1,7 @@
 package com.example.moviesapp.ui.authentication
 
 import android.widget.Toast
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -21,7 +22,9 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
@@ -32,7 +35,8 @@ import com.example.moviesapp.auth.AuthViewModel
 @Composable
 fun LoginScreen(
     navController: NavHostController,
-    viewModel: AuthViewModel
+    viewModel: AuthViewModel,
+    isDarkTheme: Boolean
     ) {
     val uiState = viewModel.uiState.collectAsState()
     val context = LocalContext.current
@@ -57,7 +61,11 @@ fun LoginScreen(
     ){
         Box(modifier = Modifier.fillMaxSize().padding(16.dp), contentAlignment = Alignment.Center){
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text(text = stringResource(R.string.login_title), style = MaterialTheme.typography.headlineMedium)
+                Image(
+                    painter = painterResource(R.drawable.flixplorer),
+                    contentDescription = "Logo",
+                )
+                Text(text = stringResource(R.string.login_title), color = if (isDarkTheme) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.primary , style = MaterialTheme.typography.headlineMedium)
                 Spacer(modifier = Modifier.height(24.dp))
                 OutlinedTextField(
                     value = uiState.value.email,

@@ -150,7 +150,8 @@ class MainActivity : ComponentActivity() {
                                 composable("login"){
                                     LoginScreen(
                                         navController = navController,
-                                        viewModel = authViewModel
+                                        viewModel = authViewModel,
+                                        isDarkTheme = isThemeDark
                                     )
                                 }
                                 composable("signup"){

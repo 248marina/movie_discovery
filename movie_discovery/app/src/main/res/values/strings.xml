@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Movies</string>
+    <string name="app_name">FlixPlorer</string>
     <string name="login_title">Login</string>
     <string name="signup">Sign Up</string>
     <string name="email_label">Email</string>
