@@ -121,7 +121,7 @@ fun Search(
                                         releaseDate = history.releaseDate,
                                         overview = history.overview,
                                         backdropPath = "",
-                                        voteAverage =  0.0,
+                                       voteAverage = history.voteAverage ?: 0.0,
                                         popularity = 0.0
                                     )
                                     onMovieClick(movie)
