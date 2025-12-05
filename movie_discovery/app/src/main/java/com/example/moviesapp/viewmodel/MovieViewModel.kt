@@ -83,10 +83,10 @@ class MovieViewModel(
                         releaseDate = movie.releaseDate,
                         overview = movie.overview,
                         addedToFav = isFavorite,
-                        showInHistory = false,
+                        showInHistory = true,
                         id = movie.id,
                         timestamp = System.currentTimeMillis(),
-                        voteAverage = movie.voteAverage
+                        voteAverage = movie.voteAverage ?: 0.0
                     )
                 )
             }
