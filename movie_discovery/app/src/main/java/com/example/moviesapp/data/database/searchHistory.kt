@@ -15,5 +15,5 @@ data class searchHistory(
     val addedToFav: Boolean,
     val timestamp: Long = System.currentTimeMillis(),
     val showInHistory: Boolean = true,
-    val voteAverage: Double?
+    val voteAverage: Double? = 0.0
 )
