@@ -157,7 +157,9 @@ class MainActivity : ComponentActivity() {
                                 composable("signup"){
                                     SignupScreen(
                                         navController = navController,
-                                        viewModel = authViewModel
+                                        viewModel = authViewModel,
+                                        isDarkTheme = isThemeDark,
+                                        onBackClick = { navController.navigateUp() }
                                     )
                                 }
                                 composable("search") {

@@ -55,7 +55,7 @@ fun HomeScreen(
                     navController.navigate("search")
                 },
             colors = TextFieldDefaults.colors(
-                disabledContainerColor = if (isDarkTheme) Color(0x597A7575) else Color(0xFFF5F5F5),
+                disabledContainerColor = if (isDarkTheme) Color(0x597A7575) else Color(0xFFE5E5E5),
                 disabledIndicatorColor = Color.Transparent
             )
         )

@@ -1,6 +1,7 @@
 package com.example.moviesapp.ui.authentication
 
 import android.widget.Toast
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -9,8 +10,13 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Button
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
@@ -32,7 +38,9 @@ import com.example.moviesapp.auth.AuthViewModel
 @Composable
 fun SignupScreen(
     navController: NavHostController,
-    viewModel: AuthViewModel
+    viewModel: AuthViewModel,
+    onBackClick: () -> Unit,
+    isDarkTheme: Boolean
 ) {
     val uiState = viewModel.uiState.collectAsState()
     val context = LocalContext.current
@@ -60,8 +68,24 @@ fun SignupScreen(
         color = MaterialTheme.colorScheme.background
     ) {
         Box(modifier = Modifier.fillMaxSize().padding(16.dp), contentAlignment = Alignment.Center){
-            Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Text(stringResource(R.string.signup), style = MaterialTheme.typography.headlineMedium)
+            IconButton(
+                onClick = onBackClick,
+                modifier = Modifier
+                    .align(Alignment.TopStart)
+                    .padding(16.dp)
+                    .background(
+                        MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.1f),
+                        shape = RoundedCornerShape(50)
+                    )
+            ) {
+                Icon(
+                    Icons.Filled.ArrowBack,
+                    contentDescription = "Back",
+                    tint = if(isDarkTheme) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onPrimary
+                )
+            }
+            Column(horizontalAlignment = Alignment.CenterHorizontally){
+                Text(stringResource(R.string.signup), color = if (isDarkTheme) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.primary , style = MaterialTheme.typography.headlineMedium)
                 Spacer(modifier = Modifier.height(24.dp))
                 OutlinedTextField(
                     value = uiState.value.email,

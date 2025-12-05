@@ -81,8 +81,8 @@ fun Search(
                 .padding(horizontal = 16.dp, vertical = 8.dp)
                 .focusRequester(focusRequester),
             colors = TextFieldDefaults.colors(
-                focusedContainerColor = if (isDarkTheme) Color(0x597A7575) else Color(0xFFF5F5F5),
-                unfocusedContainerColor = if (isDarkTheme) Color(0x597A7575) else Color(0xFFF5F5F5),
+                focusedContainerColor = if (isDarkTheme) Color(0x597A7575) else Color(0xFFE5E5E5),
+                unfocusedContainerColor = if (isDarkTheme) Color(0x597A7575) else Color(0xFFE5E5E5),
                 cursorColor =  if (isDarkTheme) MaterialTheme.colorScheme.primary else Color(0xE6009EC6),
                 focusedIndicatorColor =  if (isDarkTheme) MaterialTheme.colorScheme.primary else Color(0xE6009EC6),
                 unfocusedIndicatorColor = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.3f)

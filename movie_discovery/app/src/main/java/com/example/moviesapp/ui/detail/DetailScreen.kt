@@ -118,7 +118,7 @@ fun DetailScreen(
             Spacer(Modifier.height(20.dp))
 
             // Cast Section
-            Text("Cast", color = Color.White, style = MaterialTheme.typography.titleLarge)
+            Text("Cast", color = if(isDarkTheme) Color.White else Color.Black, style = MaterialTheme.typography.titleLarge)
 
             Spacer(Modifier.height(10.dp))
 
@@ -148,7 +148,7 @@ fun DetailScreen(
 
                         Spacer(Modifier.height(6.dp))
 
-                        Text(actor.name, color = Color.White, maxLines = 1)
+                        Text(actor.name, color = if(isDarkTheme) Color.White else Color.DarkGray, maxLines = 1)
                         actor.character?.let { Text(it, color = Color.Gray, maxLines = 1) }
                     }
                 }
