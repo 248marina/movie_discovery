@@ -42,8 +42,9 @@ fun FavoriteScreen(
             releaseDate = historyItem.releaseDate,
             overview = historyItem.overview,
             backdropPath = null,
-            voteAverage = null,
+            voteAverage = historyItem.voteAverage ?: 0.0,
             popularity = null
+
         )
     }
 
